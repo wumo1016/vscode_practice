@@ -1,6 +1,5 @@
 import * as vscode from 'vscode'
-import { parse } from '@babel/parser'
-import traverse from '@babel/traverse'
+import { getFunctionCode } from './main'
 
 export function activate(context: vscode.ExtensionContext) {
   vscode.commands.registerCommand('vscode-test.helloWorld', () => {
@@ -10,17 +9,18 @@ export function activate(context: vscode.ExtensionContext) {
     const editor = vscode.window.activeTextEditor
     if (!editor) return
 
-    const code = `
-		function test(){
-			console.log(123)
-		}
-		`;
-		const ast = parse(code)
-    console.log(ast)
+    const code = editor.document.getText()
+    const index = editor.document.offsetAt(editor.selection.active)
+    const functionNode = getFunctionCode(index, code)
+    if (!functionNode) return
+    const { start, end } = functionNode
 
     editor.edit((editBuilder) => {
       editBuilder.delete(
-        new vscode.Range(new vscode.Position(0, 0), new vscode.Position(0, 9))
+        new vscode.Range(
+          new vscode.Position(start.line - 1, start.column),
+          new vscode.Position(end.line - 1, end.column)
+        )
       )
     })
   })

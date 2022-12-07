@@ -6,8 +6,6 @@
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint"],
-  "rules": {
-    "@typescript-eslint/naming-convention": "warn"
-  },
+  "rules": {},
   "ignorePatterns": ["out", "dist", "**/*.d.ts"]
 }
