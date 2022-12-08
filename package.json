@@ -1,8 +1,9 @@
 {
-  "name": "vscode-test",
-  "displayName": "vscode-test",
+  "name": "wumo",
+  "displayName": "wumo",
+  "publisher": "wumo1016",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.73.0"
   },
@@ -10,14 +11,15 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:vscode-test.helloWorld"
+    "onCommand:wumo.helloWorld"
   ],
+  "repository": "https://github.com/wumo1016/vscode-test.git",
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "vscode-test.helloWorld",
-        "title": "Hello World"
+        "command": "wumo.helloWorld",
+        "title": "wumo"
       }
     ]
   },
@@ -27,7 +29,8 @@
     "watch": "tsc -watch -p ./",
     "#pretest": "pnpm run compile && pnpm run lint",
     "lint": "eslint src --ext ts",
-    "test": "vitest --run"
+    "test": "vitest --run",
+    "pub": "vsce publish --yarn"
   },
   "devDependencies": {
     "@babel/parser": "^7.20.5",

@@ -1,8 +1,8 @@
 import * as vscode from 'vscode'
 import { getFunctionCode } from './main'
 
-export function activate(context: vscode.ExtensionContext) {
-  vscode.commands.registerCommand('vscode-test.helloWorld', () => {
+export function activate() {
+  vscode.commands.registerCommand('wumo.helloWorld', () => {
     vscode.window.showInformationMessage('执行啦')
 
     // 删除字符
