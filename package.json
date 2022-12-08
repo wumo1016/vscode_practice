@@ -3,7 +3,7 @@
   "displayName": "wumo",
   "publisher": "wumo1016",
   "description": "",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.73.0"
   },
@@ -20,6 +20,13 @@
       {
         "command": "wumo.helloWorld",
         "title": "wumo"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "wumo.helloWorld",
+        "key": "ctrl+shift+X",
+        "mac": "cmd+R R"
       }
     ]
   },
@@ -48,5 +55,8 @@
     "mocha": "^10.1.0",
     "typescript": "^4.9.3",
     "vitest": "^0.25.5"
+  },
+  "dependencies": {
+    "vite": "^3.2.5"
   }
 }

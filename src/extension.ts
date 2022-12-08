@@ -1,8 +1,8 @@
 import * as vscode from 'vscode'
 import { getFunctionCode } from './main'
 
-export function activate() {
-  vscode.commands.registerCommand('wumo.helloWorld', () => {
+export function activate(context: vscode.ExtensionContext) {
+  const disposable = vscode.commands.registerCommand('wumo.helloWorld', () => {
     vscode.window.showInformationMessage('执行啦')
 
     // 删除字符
@@ -24,6 +24,8 @@ export function activate() {
       )
     })
   })
+
+  context.subscriptions.push(disposable)
 }
 
 export function deactivate() {}
