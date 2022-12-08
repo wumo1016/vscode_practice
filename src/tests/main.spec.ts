@@ -28,7 +28,7 @@ describe('测试ts文件', () => {
     })
   })
 
-  it.only('箭头函数', () => {
+  it('箭头函数', () => {
     const code = `
     const test = () => {
       console.log(123)
@@ -50,6 +50,32 @@ describe('测试ts文件', () => {
         line: 4,
         column: 5,
         index: 54
+      }
+    })
+  })
+
+  it.only('函数表达式', () => {
+    const code = `
+    const test = function () {
+      console.log(123)
+    }
+    const test1 = function () {
+      console.log(123)
+    }
+    `
+    const index = 50
+    const node = getFunctionCode(index, code)
+    expect(node).toEqual({
+      name: 'test',
+      start: {
+        line: 2,
+        column: 4,
+        index: 5
+      },
+      end: {
+        line: 4,
+        column: 5,
+        index: 60
       }
     })
   })

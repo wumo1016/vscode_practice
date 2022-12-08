@@ -58,6 +58,25 @@ export function getFunctionCode(
           }
         }
       }
+    },
+    FunctionExpression(rawPath) {
+      function getName() {
+        return Object.keys(rawPath?.parentPath?.getBindingIdentifiers())[0]
+      }
+      const path = rawPath.parentPath.parentPath
+      // 是否是声明
+      if (path?.isVariableDeclaration) {
+        const node = path.node
+        const start = node.loc?.start
+        const end = node.loc?.end
+        if (index >= node.start! && index <= node.end!) {
+          functionNode = {
+            name: getName(),
+            start,
+            end
+          }
+        }
+      }
     }
   })
   return functionNode
