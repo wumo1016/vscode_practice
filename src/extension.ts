@@ -2,7 +2,7 @@ import * as vscode from 'vscode'
 import { getFunctionCode } from './main'
 
 export function activate(context: vscode.ExtensionContext) {
-  const disposable = vscode.commands.registerCommand('wumo.helloWorld', () => {
+  const disposable = vscode.commands.registerCommand('wyb.helloWorld', () => {
     vscode.window.showInformationMessage('执行啦')
 
     // 删除字符
