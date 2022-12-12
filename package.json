@@ -3,7 +3,8 @@
   "name": "wyb",
   "displayName": "wyb",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.3",
+  "repository": "https://github.com/wumo1016/vscode-test.git",
   "engines": {
     "vscode": "^1.74.0"
   },
