@@ -17,7 +17,24 @@
         "command": "wumo-trans.wumoTest",
         "title": "Wumo Test"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "trans-sidebar",
+          "title": "辅助翻译",
+          "icon": "src/assets/svg/sidebar-logo.svg"
+        }
+      ]
+    },
+    "views": {
+      "trans-sidebar": [
+        {
+          "id": "Arvinjun-General",
+          "name": "通用"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run package",
