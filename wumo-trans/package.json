@@ -30,13 +30,14 @@
     "views": {
       "trans-sidebar": [
         {
-          "id": "Arvinjun-General",
-          "name": "通用"
+          "id": "Chinese-List",
+          "name": "中文列表"
         }
       ]
     }
   },
   "scripts": {
+    "dev": "webpack --watch",
     "vscode:prepublish": "yarn run package",
     "compile": "webpack",
     "watch": "webpack --watch",
